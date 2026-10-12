@@ -22,7 +22,6 @@ public class LionTests {
 
     @Test
     public void testUnknownLionsSexTest() {
-
         try {
             lion = new Lion("Незнаем", feline);
         } catch (Exception exception) {
@@ -44,7 +43,7 @@ public class LionTests {
     @Test
     void testGetFood() throws Exception {
         lion = new Lion("Самка", feline);
-        List<String> list = List.of("Еда", "Не еда");
+        List<String> list = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.getFood("Хищник")).thenReturn(list);
         assertEquals(list, lion.getFood());
     }

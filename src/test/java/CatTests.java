@@ -20,7 +20,7 @@ public class CatTests {
 
     @Test
     public void testConstructor() throws Exception {
-        List<String> list = List.of("Мясо", "Рыба");
+        List<String> list = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(list);
         cat = new Cat(feline);
         assertEquals(list, cat.getFood(), "Должно возвращать корректный лист");

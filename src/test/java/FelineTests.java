@@ -17,11 +17,16 @@ public class FelineTests {
 
 
     @Test
-    public void testEatMeat() throws Exception {
-        feline.eatMeat();
-        Mockito.verify(feline).getFood("Хищник");
+    public void testEatMeatReturnRightList() throws Exception {
         assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat(), "Должен вернуть корректный список хищника");
     }
+
+    @Test
+    public void testEatMeatCallsWithParameter() throws Exception {
+        feline.eatMeat();
+        Mockito.verify(feline).getFood("Хищник");
+    }
+
 
     @Test
     public void testGetKittensInt() {
@@ -36,7 +41,7 @@ public class FelineTests {
 
 
     @Test
-    public void testGetKittens()  {
+    public void testGetKittens() {
         feline.getKittens();
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
     }
